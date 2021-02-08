@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <h2>姓名：{{person.name}}---年龄：{{person.age}}</h2>
+    <h3>兴趣：{{person.fav}}</h3>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+    【v-html】：
+    <div v-html="htmlStr"></div>
+
+    【v-text="msg"】：
+    <div v-text="msg"></div>
+    【v-text="person.fav" 兴趣】：
+    <div v-text="person.fav"></div>
+    【v-bind:myAttr="person.name"】
+    <div v-bind:myAttr="person.name">BIND</div>
+    【:class="person.fav"】
+    <div :myAttr="person.fav">BIND2</div>
+    【v-model="msg"】
+    <input type="text" v-model="msg"><br>
+    【v-model="person.age"】
+    <input type="text" v-model="person.age"><br>
+    <button v-on:click="handlerClick">v-on Click</button>
+    <button @click="handlerClick">@Click</button>
+  </div>
+  <script type="module">
+    import MVue from "./MiniVue.js"
+
+
+    let vm = new MVue({
+      el: "#app",
+      data() {
+        return {
+          htmlStr: "<div>123</div>",
+          msg: "初始信息",
+          person: {
+            name: "张三",
+            age: 18,
+            fav: "eat"
+          }
+        }
+      },
+      methods: {
+        handlerClick() {
+          this.$data.person.name="change"
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
