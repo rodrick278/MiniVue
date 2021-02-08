@@ -6,7 +6,7 @@
 
 [图片来源](https://juejin.cn/post/6844904183938678798)
 
-![img](https://gitee.com/rodrick278/img/raw/master/img/172970655167cff7)
+![](./pic/pic1.png)
 
 ### 发布订阅的关键步骤
 
