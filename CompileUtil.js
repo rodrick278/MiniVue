@@ -19,7 +19,7 @@ let compileUtil = {
   text(node, expr, vm) {
     // 希望通过 expr=msg 取到 data 里的 msg: "初始信息"
     // 还有可能取 person.fav 这种对象内的值
-    // 还有可能是 {{person.fav}} 这种
+    // 还有可能是文本节点的 {{person.fav}} 这种
     let value
     if (expr.indexOf('{{') !== -1) {
       // 处理 {{xxx.xxx}}
